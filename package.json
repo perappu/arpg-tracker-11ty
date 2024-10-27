@@ -1,16 +1,34 @@
 {
-  "name": "hella-simple-eleventy-tailwind-starter",
-  "description": "Hella Simple Eleventy + Tailwind Starter",
+  "name": "11ty-tracker",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "serve": "rm -rf _site && npx @11ty/eleventy --serve --quiet & npx tailwindcss -i ./src/tailwind.css -o ./_site/styles.css --watch",
-    "build": "rm -rf _site && ELEVENTY_ENV=production npx @11ty/eleventy && npx tailwindcss -i ./src/tailwind.css -o ./_site/styles.css --minify"
+    "start": "npm-run-all -p dev:*",
+    "prebuild": "rimraf dist/",
+    "build": "run-s build:*",
+    "dev:11ty": "eleventy --serve",
+    "dev:css": "tailwindcss -i src/tailwind.css -o _site/tailwind.css --watch --postcss",
+    "build:11ty": "eleventy",
+    "build:css": "tailwindcss -i src/tailwind.css -o _site/tailwind.css --postcss"
   },
   "keywords": [],
-  "author": "Marcel Appelman",
-  "license": "MIT",
-  "browserslist": "defaults, not ie <= 11",
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "tailwindcss": "^3.4.7"
+    "@tailwindcss/typography": "^0.5.15",
+    "alpinejs": "^3.14.1",
+    "autoprefixer": "^10.4.20",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.47",
+    "rimraf": "^3.0.2",
+    "slugify": "^1.6.5",
+    "tailwindcss": "^3.4.13"
+  },
+  "dependencies": {
+    "@11ty/eleventy-fetch": "^4.0.1",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "lodash": "^4.17.21"
   }
 }

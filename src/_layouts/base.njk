@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{{ '/tailwind.css' | url }}">
+        <script src="/js/alpine.js"></script>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Stokori's Reos Tracker</title>
+    </head>
+    <body>
+        <div class="w-full grid sm:h-svh sm:max-h-svh grid-cols-1 sm:grid-cols-2 sm:flex">
+            {% include "_navigation.njk" %}
+            <main class="h-full flex-1 p-5 prose-sm md:prose-base lg:prose-lg prose-slate">
+                {% block content %}
+                    {{ content | safe }}
+                {% endblock %}
+            </main>
+        </div>
+        <footer class="mb-10">
+            </footer>
+    </body>
+</html>

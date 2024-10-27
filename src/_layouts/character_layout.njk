@@ -1,0 +1,38 @@
+{% extends "./base.njk" %}
+{% block content %}
+  <h1>{{ title }}</h1>
+  <div class="flex flex-row items-center justify-between">
+    <div class="basis-1/4 text-center">
+      {{ import | embed | safe }}
+    </div>
+    <div class="basis-3/4 ml-5 text-left">
+      <div class="text-left">
+        {{ content | safe }}
+      </div>
+    </div>
+  </div>
+  {% if collections.characterCategories|length %}
+    {% for category in collections.characterCategories %}
+      {% if collections.characterCategories|length %}
+        {% for image in collections.images | byCategory(category) | byCharacter(title) %}
+          {% if loop.first %}
+            <h2>{{ category }}</h2>
+            <div class="grid grid-cols-3 gap-4">
+            {% endif %}
+            <div class="flex flex-col items-center">
+              {{ image.data.url | embed | safe }}
+              <br>
+              <a href="/character/{{ title }}/{{ image.fileSlug }}">Full View</a>
+                CP: {{ image.data.cp }}
+                <div>
+                  {{ image.content | safe }}
+                </div>
+              </div>
+              {% if loop.last %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endblock %}

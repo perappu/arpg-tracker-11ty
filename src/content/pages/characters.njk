@@ -1,0 +1,24 @@
+---
+permalink: index.html
+layout: base
+---
+
+{% block content %}
+  <h1>Characters</h1>
+
+<div class="grid grid-cols-4 gap-4">
+  {% if collections.characters|length %}
+    {% for character in collections.characters %}
+          <div class="text-center">
+            <a href="/character/{{ character.fileSlug }}">
+          {{ character.data.import | embedImageOnly | safe }}
+          </a>
+          <a href="/character/{{ character.fileSlug }}">
+         <h4 class="!mt-1"> {{ character.data.title }}</h4>
+         </a>
+        </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+
+{% endblock %}

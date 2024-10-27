@@ -1,0 +1,16 @@
+{% extends "./base.njk" %}
+{% block content %}
+    <h1>{{ title }}</h1>
+
+        <div class="flex flex-row items-center justify-between">
+            <div class="basis-1/4 text-center">
+                {{ url | embed | safe }}
+            </div>
+            <div class="basis-3/4 ml-5 text-left">
+                <div class="text-left">
+                    CP: {{ cp }}
+                    {{ content | safe }}
+                </div>
+            </div>
+        </div>
+    {% endblock %}
