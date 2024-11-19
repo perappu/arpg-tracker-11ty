@@ -19,3 +19,7 @@ main a {
 h1 {
     @apply !mb-1;
 }
+
+.literature {
+    @apply text-sm bg-slate-300 rounded p-3 text-slate-700;
+}
