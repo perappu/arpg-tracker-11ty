@@ -6,8 +6,12 @@ const ITEMS_PER_PAGE = 20;
 
 module.exports = function (collection) {
   // target collection
-  let blogposts = collection.getFilteredByGlob("./src/content/characters/**/*.njk")
-                    .sort((a, b) => b.data.category > a.data.category);
+  let blogposts = collection.getFilteredByGlob("./src/content/characters/**/*.md")
+                    .sort((a, b) => {
+                      if (a.data.category > b.data.category) return -1;
+                      else if (a.data.category < b.data.category) return 1;
+                      else return 0;
+                    })
 
   // paginated collection by categories
   return chunkCollectionByKey(blogposts, "character", ITEMS_PER_PAGE);

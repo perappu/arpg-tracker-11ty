@@ -8,7 +8,12 @@
     <div class="basis-3/4 ml-5 text-left">
       <div class="text-left">
         {{ content | safe }}
-      </div>
+      
+      <hr class="!mb-3 !mt-3" />
+      <div class="text-center">
+        Total CP: {{ collections.images | byCategory(category) | byCharacter(title) | cpTotal }}
+        </div>
+        </div>
     </div>
   </div>
   {% if collections.characterCategories|length %}
@@ -21,18 +26,22 @@
             {% endif %}
             <div class="flex flex-col items-center">
               {{ image.data.url | embed | safe }}
-              <br>
               <a href="/character/{{ title }}/{{ image.fileSlug }}">Full View</a>
-                CP: {{ image.data.cp }}
-                <div>
+              Total CP: {{ image.data.cp }}
+              <div x-data="{ opened: false }">
+                <div class="text-center ">
+                  <button class="bg-slate-500 rounded text-white pl-3 pr-3" @click="opened = ! opened">Click for CP Breakdown</button>
+                </div>
+                <div class="text-sm" x-show="opened" x-collapse>
                   {{ image.content | safe }}
                 </div>
               </div>
-              {% if loop.last %}
-              </div>
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  {% endblock %}
+            </div>
+            {% if loop.last %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endblock %}

@@ -4,6 +4,8 @@ module.exports = function (eleventyConfig) {
     './node_modules/alpinejs/dist/cdn.js': './js/alpine.js',
   })
 
+  eleventyConfig.addBundle("js");
+
   // blogposts collection
   eleventyConfig.addCollection(
     "images",
@@ -25,7 +27,7 @@ module.exports = function (eleventyConfig) {
     // Create an array of all tags
     eleventyConfig.addCollection('characterCategories', function (collection) {
       let categorySet = new Set();
-      collection.getFilteredByGlob("./src/content/characters/**/*.njk").forEach((item) => {
+      collection.getFilteredByGlob("./src/content/characters/**/*.md").forEach((item) => {
         (item.data.category || []).forEach((category) => categorySet.add(category));
       });
   
@@ -46,6 +48,8 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter('embed', require("./src/_11ty/filters/embed.js"));
     eleventyConfig.addFilter('embedImageOnly', require("./src/_11ty/filters/embedImageOnly.js"));
+    eleventyConfig.addFilter('cpTotal', require("./src/_11ty/filters/cptotal.js"));
+
 
   return {
     dir: {

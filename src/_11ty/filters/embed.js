@@ -8,7 +8,9 @@ const embed = async (link) => {
       type: "json"
     });
 
-    return "<div class='text-center'><a href='" + link + "'><img class='mx-auto' src='" + data.thumbnail_url +"' /></a>" +
+    //we have to hardcode some styles here because they aren't picked up by tailwind
+    return "<div class='text-center'>" + 
+    "<a href='" + link + "'><img style='max-height: 200px; margin: auto;' src='" + data.thumbnail_url +"' /></a>" +
     "<a href='" + link + "'><b>" + data.title + "</b></a><br /> by <a href='" + data.author_url + "'>" + data.author_name + "</a></div>";
   } catch (error) {
     console.error(`Fetch failed in embed.js. ${error}`);

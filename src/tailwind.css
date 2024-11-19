@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Jockey One', sans-serif;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+main a {
+    @apply underline;
+}
+
+h1 {
+    @apply !mb-1;
+}

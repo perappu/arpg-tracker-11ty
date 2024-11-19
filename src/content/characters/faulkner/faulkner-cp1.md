@@ -5,8 +5,8 @@ cp: 7
 category: ['Misc']
 character: ['Faulkner']
 ---
-Headshot + 1<br/>
-Colored + 2<br/>
-Shaded + 1<br/>
-Personal work + 3<br/>
+- Headshot + 1
+- Colored + 2
+- Shaded + 1
+- Personal work + 3
 Total = 7

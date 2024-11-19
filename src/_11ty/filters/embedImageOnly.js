@@ -8,7 +8,7 @@ const embed = async (link) => {
       type: "json"
     });
 
-    return "<img style='margin:0px;' src='" + data.thumbnail_url +"' /></a>";
+    return "<img style='margin:0px;' src='" + data.url +"' /></a>";
   } catch (error) {
     console.error(`Fetch failed in embed.js. ${error}`);
   }
