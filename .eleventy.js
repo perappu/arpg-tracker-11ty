@@ -30,8 +30,17 @@ module.exports = function (eleventyConfig) {
       collection.getFilteredByGlob("./src/content/characters/**/*.md").forEach((item) => {
         (item.data.category || []).forEach((category) => categorySet.add(category));
       });
-  
-      return [...categorySet];
+
+      let categories = [...categorySet].sort();
+
+      //remove misc and put it at the end
+      const misc = categories.indexOf('Misc');
+      if (misc > -1) {
+        categories.splice(misc, 1);
+      }
+      categories.push('Misc');
+
+      return categories;
     });
 
     eleventyConfig.addFilter('byCategory', function(collection, category) {
