@@ -2,7 +2,7 @@
 title: Forgotten 1
 category: ['The Egress Unveiled']
 character: ['Faulkner']
-url: https://www.deviantart.com/stokori/art/1123849095
+url: https://www.deviantart.com/stokori/art/WoR-The-Forgotten-1-Faulkner-1123849095
 cp: 15
 ---
 
