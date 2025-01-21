@@ -51,7 +51,11 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter('byCharacter', function(collection, character) {
       if (!character) return collection;
-        const filtered = collection.filter(item => item.data.character == character)
+        const filtered = collection.filter(item => item.data.character == character).sort((a, b) => {
+          if (a.data.title < b.data.title) return -1;
+          else if (a.data.title > b.data.title) return 1;
+          else return 0;
+        })
         return filtered;
     });
 
