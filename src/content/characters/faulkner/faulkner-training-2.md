@@ -3,7 +3,7 @@ title: Training 2
 category: ['Training']
 character: ['Faulkner']
 url: https://www.deviantart.com/stokori/art/WoR-Training-Stage-2-Faulkner-1102421929
-cp: 50
+cp: 54
 ---
 
 Panel 1:
@@ -14,8 +14,8 @@ Panel 1:
 - Land Bonus + 1
 - Personal work + 3
 - Companion + 2
-
-Total = 15
+- Bonded present + 2
+Total = 17
 
 Panel 2:
 - Headshot + 1
@@ -41,9 +41,9 @@ Panel 5:
 - Land Bonus + 1
 - Personal work + 3
 - Companion + 2
-
+- Bonded present + 2
 Total = 15
 
 Training + 2
 
-Grand Total: 50
+Grand Total: 54

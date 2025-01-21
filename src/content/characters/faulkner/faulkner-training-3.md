@@ -3,7 +3,7 @@ title: Training 3
 category: ['Training']
 character: ['Faulkner']
 url: https://www.deviantart.com/stokori/art/WoR-Training-Stage-3-Faulkner-1102425046
-cp: 36
+cp: 42
 ---
 
 Panel 1:
@@ -12,8 +12,8 @@ Panel 1:
 - Shaded + 2
 - Companion + 2
 - Personal work + 3
-
-Total = 11
+- Bonded present + 2
+Total = 13
 
 Panel 4:
 - Headshot + 1
@@ -21,8 +21,8 @@ Panel 4:
 - Shaded + 2
 - Companion + 2
 - Personal work + 3
-
-Total = 11
+- Bonded present + 2
+Total = 13
 
 Panel 5:
 - Headshot + 1
@@ -32,9 +32,10 @@ Panel 5:
 - Land Bonus + 1
 - Personal work + 3
 - Companion + 2
+- Bonded present + 2
 
-Total = 12
+Total = 14
 
 Training + 2
 
-Grand Total: 36
+Grand Total: 42
